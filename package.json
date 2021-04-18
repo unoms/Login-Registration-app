@@ -1,0 +1,30 @@
+{
+  "name": "jwt_bcrypt_roles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.9.2",
+    "hbs": "^4.1.1",
+    "mongoose": "^5.11.13",
+    "passport": "^0.4.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
+  }
+}
