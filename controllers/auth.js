@@ -8,7 +8,7 @@ module.exports.login = async function(req, res, next){
         //info - is a message from middleware/passport.js
         passport.authenticate('local', function(err, user, info) {
             if (err) { return next(err) }
-            if (!user) { return res.json({errors: [{msg: info}]}) }
+            if (!user) { return res.status(401).json({errors: [{msg: info}]}) }
             
             req.logIn(user, function(err) {
                 if (err) { return next(err) }
@@ -16,6 +16,6 @@ module.exports.login = async function(req, res, next){
             });
         })(req, res, next);
     }else{//Send errors during validation
-        return res.json({errors: validationErrors.errors})
+        return res.status(401).json({errors: validationErrors.errors})
     }
 }

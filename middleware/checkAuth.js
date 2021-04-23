@@ -6,7 +6,7 @@ module.exports = function(req, res, next){
                     if(req.user.role[0] === 'ADMIN'){
                         return next()
                     }else{
-                        return res.json({msg: "Only Admins may access this route"})
+                        return res.status(403).json({msg: "Only Admins may access this route"})
                     }
                 }
                 //Print logout btn in the menu.hbs 

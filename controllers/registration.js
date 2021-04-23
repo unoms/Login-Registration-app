@@ -11,7 +11,7 @@ module.exports.registration = async function(req, res){
         try{
             const canndidate = await User.findOne({email: email})
             if(canndidate){
-                return res.json({errors: [{msg: 'The email is occupied'}]})
+                return res.status(401).json({errors: [{msg: 'The email is occupied'}]})
             }
 
             //Adding an user to DB
@@ -30,7 +30,7 @@ module.exports.registration = async function(req, res){
             }
     }else{
         //Send errors during validation
-        return res.json({errors: validationErrors.errors})
+        return res.status(401).json({errors: validationErrors.errors})
     }    
 }
 

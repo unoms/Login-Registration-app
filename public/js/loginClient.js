@@ -18,7 +18,6 @@ function fetchReguest(e){
         })
         .then((response) => response.json())
         .then(data => {
-            console.log(data)
             if(data.errors) output.innerHTML = template({alerts: data.errors})
             if(data.success){
                 output.innerHTML = template({success: true})
